@@ -1,0 +1,11 @@
+Langage       : LUA 5.3
+Moteur        : Love2D
+Environnement : Linux debian
+Langage       : FR
+Author      : Pierre-Angelo PEYRIE, Vassily ROMAN, Norman ALIE
+
+Name        : The Way Home
+Description : Puzzle game se basant sur une grille. Un chariot se trouve à un point A et doit atteindre un point B de manière
+              directe. Des obstacles se trouve sur son chemin. Le joueur controle un personnage qui doit dégager les obstacles.
+Goal    : Le chariot doit atteindre l'arrivé sans rencontrer d'obstacles
+Rules      : 
