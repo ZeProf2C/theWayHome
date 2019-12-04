@@ -4,8 +4,8 @@ Perso.YMap  = 1
 Perso.radius = 30
 Perso.nom   = "Pascal"
 Perso.Color = {} 
-Perso.Color.bg = {0.8,0.8,0.8}
-Perso.Color.name = {0.2,0.2,0.2}
+  Perso.Color.bg = {0.8,0.8,0.8}
+  Perso.Color.name = {0.2,0.2,0.2}
 
 function Perso.update ()
   Perso.X     = Perso.XMap * casePxSide - casePxSide/2

@@ -17,14 +17,13 @@ require("Obstacle")
 Xecran,Yecran = caseCountWidth*casePxSide,caseCountHeight*casePxSide
 love.window.setMode(Xecran,Yecran)
 
-obs = obstacle.new(4, 4, 5, 2)
-uli = obstacle.new(1, 1, 1, 1, {25/255, 14/255, 130/255})
+obs = obstacle.new(4, 4, 4, 3)
+uli = obstacle.new(1, 1, 1, 1, {25/255, 14/255, 130/255}, "Uli Behringer")
 function love.update(dt)
   Map.update()
   Perso.update()
   obs.update(Map)
-  uli.update(Map)
-  Map[6][5].state  = "occupe"
+  --Map[6][5].state  = "occupe"
   end
 
 function love.draw ()
@@ -38,7 +37,6 @@ function love.draw ()
   love.graphics.print(Perso.XMap..";"..Perso.YMap,60)
 
   obs.draw()
-  uli.draw()
 end
 
 
