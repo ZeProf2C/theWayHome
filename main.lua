@@ -8,14 +8,15 @@
 --statut          : Dev Alpha
 --==============================================================================
 io.stdout:setvbuf('no')
+
 mainFont = love.graphics.newFont(14)
  
-require("map")
+require("Map")
 require("Perso")  
 require("Obstacle")
 
-Xecran,Yecran = caseCountWidth*casePxSide,caseCountHeight*casePxSide
-love.window.setMode(Xecran,Yecran)
+WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
+love.window.setMode(WIDTH,HEIGHT)
 
 obs = obstacle.new(4, 4, 4, 4)
 uli = obstacle.new(1, 1, 1, 1, {25/255, 14/255, 130/255}, "Uli Behringer")
@@ -23,8 +24,8 @@ function love.update(dt)
   Map.update()
   Perso.update()
   obs.update(Map)
-  --Map[6][5].state  = "occupe"
-  end
+  uli.update(Map)
+end
 
 function love.draw ()
   love.graphics.setFont(mainFont)
@@ -37,6 +38,7 @@ function love.draw ()
   love.graphics.print(Perso.XMap..";"..Perso.YMap,60)
 
   obs.draw()
+  uli.draw()
 end
 
 

@@ -14,7 +14,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
             Obstacle.color.line = {62/255, 142/255, 13/255}             --Couleur du contour (Non implémenté)
         Obstacle.file = "ressources/images/obstacle.png"    --Image de fond de l'obstacle (Non implémenté)
 
-        Obstacle.update = function(map) --Prends un objet map et calcul ses coords réels. Ne retourne rien
+        Obstacle.update = function(map) --Prends un objet map et calcul les coords reels de l'obstacle. Rends .busy ses positions. Ne retourne rien
             if Obstacle.dir == 1 then
                 Obstacle.XmapEnd = Obstacle.lenght
                 Obstacle.YmapEnd = 1
@@ -52,7 +52,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
             Obstacle.YEnd = Obstacle.YmapEnd * casePxSide 
         end
 
-        Obstacle.draw = function() --Prends unobj obstacle et le draw. Ne retourne rien
+        Obstacle.draw = function() 
             love.graphics.setColor(Obstacle.color.bg)
             love.graphics.rectangle("fill", Obstacle.X, Obstacle.Y, Obstacle.XEnd, Obstacle.YEnd)
         end
