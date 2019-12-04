@@ -5,7 +5,7 @@
 --version         : 1.0
 --language        : lua
 --licence         : CC-BY-NC
---statut          :Dev Alpha
+--statut          : Dev Alpha
 --==============================================================================
 io.stdout:setvbuf('no')
 mainFont = love.graphics.newFont(14)
@@ -17,7 +17,7 @@ require("Obstacle")
 Xecran,Yecran = caseCountWidth*casePxSide,caseCountHeight*casePxSide
 love.window.setMode(Xecran,Yecran)
 
-obs = obstacle.new(4, 4, 4, 3)
+obs = obstacle.new(4, 4, 4, 4)
 uli = obstacle.new(1, 1, 1, 1, {25/255, 14/255, 130/255}, "Uli Behringer")
 function love.update(dt)
   Map.update()

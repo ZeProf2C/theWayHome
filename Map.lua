@@ -5,12 +5,13 @@ casePxSide      = 80
 
 function CreateCase(i,j)
   local Case = {}
-  Case.side     = casePxSide  
-  Case.color    = {0.8,0.8,0.8}
-  Case.X        = (i-1)*Case.side
-  Case.Y        = (j-1)*Case.side
-  Case.name      = (i..";"..j)
-  Case.state     = "vide"
+    Case.side     = casePxSide  
+    Case.color    = {0.8,0.8,0.8}
+    Case.X        = (i-1)*Case.side
+    Case.Y        = (j-1)*Case.side
+    Case.name     = (i..";"..j)
+    Case.state    = "vide"  --Décris ce qui se trouve à l'emplacement X;Y de la map (Utiliser .busy pour indique l'état !)
+    Case.busy     = 0       --Indique l'état de l'emplacment X;Y, si il est busy le perso ne peut pas y aller
   return Case
 end
 
@@ -26,10 +27,20 @@ function Map.update ()
   for i = 1 ,caseCountWidth do
     for j = 1 , caseCountHeight do
       if i == Perso.XMap and j == Perso.YMap then
-        Map[i][j].state = "occupe"
+        Map[i][j].state = "perso"
       else
         Map[i][j].state = "vide"
       end
+
+      if Map[i][j].state == "vide" then   --
+        Map[i][j].busy = 0
+      else
+        Map[i][j].busy = 1
+      end
+
+      if Map[i][j].busy == 0 then
+        Map[i][j].state = "vide"
+      end                                 --Rend un emplacement occupé (.busy) s'il n'est pas vide (.state "vide"), ne fonctionne pas !
     end
   end
 end

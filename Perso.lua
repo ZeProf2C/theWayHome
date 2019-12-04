@@ -20,18 +20,18 @@ function Perso.draw ()
 end
 
 function love.keypressed (key)
-  if key == "right" and Perso.XMap < caseCountWidth and Map[Perso.XMap + 1][Perso.YMap].state =="vide" then
+  if key == "right" and Perso.XMap < caseCountWidth and Map[Perso.XMap + 1][Perso.YMap].busy == 0 then
     Perso.XMap = Perso.XMap + 1
   end
-  if  key =="left"  and Perso.XMap > 1 and Map[Perso.XMap - 1][Perso.YMap].state =="vide"  then
+  if  key =="left"  and Perso.XMap > 1 and Map[Perso.XMap - 1][Perso.YMap].busy == 0  then
     Perso.XMap = Perso.XMap - 1
   end
   
-  if  key =="up"    and Perso.YMap > 1 and Map[Perso.XMap][Perso.YMap - 1].state =="vide" then
+  if  key =="up"    and Perso.YMap > 1 and Map[Perso.XMap][Perso.YMap - 1].busy == 0 then
     Perso.YMap = Perso.YMap - 1
   end
   
-  if  key =="down" and Perso.YMap < caseCountHeight and Map[Perso.XMap][Perso.YMap + 1].state =="vide" then
+  if  key =="down" and Perso.YMap < caseCountHeight and Map[Perso.XMap][Perso.YMap + 1].busy == 0 then
     Perso.YMap = Perso.YMap + 1
   end
   if key=="escape" then
