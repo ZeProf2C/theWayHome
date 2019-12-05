@@ -14,6 +14,7 @@ mainFont = love.graphics.newFont(14)
 require("Map")
 require("Perso")  
 require("Obstacle")
+require("xml")
 
 WIDTH, HEIGHT = love.window.getDesktopDimensions(1)
 while caseCountWidth*casePxSide >= WIDTH and caseCountHeight*casePxSide >= HEIGHT do
@@ -22,7 +23,7 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(4, 4, 4, 4, , "obs")
+obs = obstacle.new(4, 4, 4, 4, {156/255, 125/255, 52/255}, "obs")
 uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
 
 function love.update(dt)
