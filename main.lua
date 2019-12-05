@@ -22,7 +22,7 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(4, 4, 4, 4, nil, "obs")
+obs = obstacle.new(4, 4, 4, 4, , "obs")
 uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
 
 function love.update(dt)
