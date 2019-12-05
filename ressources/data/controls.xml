@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controls>
+    <up>up</up>
+    <down>down</down>
+    <right>right</right>
+    <left>left</left>
+    <quit>escape</quit>
+</controls>
