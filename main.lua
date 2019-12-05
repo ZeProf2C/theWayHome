@@ -10,7 +10,8 @@
 io.stdout:setvbuf('no')
 
 mainFont = love.graphics.newFont(14)
- 
+
+require("xml")
 require("Map")
 require("Perso")  
 require("Obstacle")
