@@ -10,8 +10,8 @@ Perso.Color = {}
 function Perso.update ()
   Perso.X     = Perso.XMap * casePxSide - casePxSide/2
   Perso.Y     = Perso.YMap * casePxSide - casePxSide/2
- 
 end
+
 function Perso.draw ()
   love.graphics.setColor(Perso.Color.bg)
   love.graphics.circle("fill",Perso.X,Perso.Y,Perso.radius,111)
@@ -20,20 +20,29 @@ function Perso.draw ()
 end
 
 function love.keypressed (key)
-  if key == "right" and Perso.XMap < caseCountWidth and Map[Perso.XMap + 1][Perso.YMap].busy == 0 then
+  if key == "right" and Perso.XMap < caseCountWidth and Map[Perso.XMap + 1][Perso.YMap].busy == false then
+    Map[Perso.XMap][Perso.YMap].state = "vide"
     Perso.XMap = Perso.XMap + 1
+    Map[Perso.XMap][Perso.YMap].state = "perso"
   end
-  if  key =="left"  and Perso.XMap > 1 and Map[Perso.XMap - 1][Perso.YMap].busy == 0  then
+  if  key =="left"  and Perso.XMap > 1 and Map[Perso.XMap - 1][Perso.YMap].busy == false  then
+    Map[Perso.XMap][Perso.YMap].state = "vide"
     Perso.XMap = Perso.XMap - 1
+    Map[Perso.XMap][Perso.YMap].state = "perso"
   end
   
-  if  key =="up"    and Perso.YMap > 1 and Map[Perso.XMap][Perso.YMap - 1].busy == 0 then
+  if  key =="up"    and Perso.YMap > 1 and Map[Perso.XMap][Perso.YMap - 1].busy == false then
+    Map[Perso.XMap][Perso.YMap].state = "vide"
     Perso.YMap = Perso.YMap - 1
+    Map[Perso.XMap][Perso.YMap].state = "perso"
   end
   
-  if  key =="down" and Perso.YMap < caseCountHeight and Map[Perso.XMap][Perso.YMap + 1].busy == 0 then
+  if  key =="down" and Perso.YMap < caseCountHeight and Map[Perso.XMap][Perso.YMap + 1].busy == false then
+    Map[Perso.XMap][Perso.YMap].state = "vide"
     Perso.YMap = Perso.YMap + 1
+    Map[Perso.XMap][Perso.YMap].state = "perso"
   end
+
   if key=="escape" then
     love.event.quit()
   end

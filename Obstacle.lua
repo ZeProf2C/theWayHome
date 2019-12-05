@@ -21,7 +21,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide - casePxSide
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide
                 for i = Obstacle.Xmap, Obstacle.Xmap + Obstacle.lenght-1 do
-                    map[i][Obstacle.Ymap].busy = 1
+                    map[i][Obstacle.Ymap].state = "obstacle"
                 end
             elseif Obstacle.dir == 2 then
                 Obstacle.XmapEnd = - Obstacle.lenght
@@ -29,7 +29,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide 
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide
                 for i = Obstacle.Xmap, Obstacle.Xmap - Obstacle.lenght+1, -1 do
-                    map[i][Obstacle.Ymap].busy = 1
+                    map[i][Obstacle.Ymap].state = "obstacle"
                 end
             elseif Obstacle.dir == 3 then
                 Obstacle.XmapEnd = 1
@@ -37,7 +37,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide - casePxSide
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide
                 for i = Obstacle.Ymap, Obstacle.Ymap + Obstacle.lenght-1 do
-                    map[Obstacle.Xmap][i].busy = 1
+                    map[Obstacle.Xmap][i].state = "obstacle"
                 end
             elseif Obstacle.dir == 4 then
                 Obstacle.XmapEnd = 1
@@ -45,7 +45,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide - casePxSide
                 Obstacle.Y = Obstacle.Ymap * casePxSide 
                 for i = Obstacle.Ymap, Obstacle.Ymap - Obstacle.lenght+1, -1 do
-                    map[Obstacle.Xmap][i].busy = 1
+                    map[Obstacle.Xmap][i].state = "obstacle"
                 end
             end
             Obstacle.XEnd = Obstacle.XmapEnd * casePxSide 
