@@ -56,5 +56,21 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
             love.graphics.setColor(Obstacle.color.bg)
             love.graphics.rectangle("fill", Obstacle.X, Obstacle.Y, Obstacle.XEnd, Obstacle.YEnd)
         end
+
+        Obstacle.move = function(dir)
+            if dir == 1 or dir == 2 then
+                if Obstacle.dir == 1 or Obstacle.dir == 2 then
+
+                else
+                    return 1
+                end
+            elseif dir == 3 or dir == 4 then
+                if Obstacle.dir == 3 or Obstacle.dir == 4 then
+
+                else
+                    return 1
+                end
+            end
+        end
     return Obstacle
 end
