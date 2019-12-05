@@ -43,5 +43,3 @@ function love.draw()
 
   Map.draw(true)
 end
-
-
