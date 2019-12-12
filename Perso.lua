@@ -20,10 +20,14 @@ function Perso.draw()
 end
 
 function love.keypressed(key)
-  if key == controls.right and Perso.XMap < caseCountWidth and Map[Perso.XMap + 1][Perso.YMap].busy == false then
-    Map[Perso.XMap][Perso.YMap].state = "vide"
-    Perso.XMap = Perso.XMap + 1
-    Map[Perso.XMap][Perso.YMap].state = "perso"
+  if key == controls.right and Perso.XMap < caseCountWidth then
+    if Map[Perso.XMap + 1][Perso.YMap].busy == true then
+      obstacle.move(Map[Perso.XMap + 1][Perso.YMap].state)
+    else
+      Map[Perso.XMap][Perso.YMap].state = "vide"
+      Perso.XMap = Perso.XMap + 1
+      Map[Perso.XMap][Perso.YMap].state = "perso"
+    end
   end
   if  key == controls.left and Perso.XMap > 1 and Map[Perso.XMap - 1][Perso.YMap].busy == false  then
     Map[Perso.XMap][Perso.YMap].state = "vide"

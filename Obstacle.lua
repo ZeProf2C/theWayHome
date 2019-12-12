@@ -8,7 +8,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
         Obstacle.XEnd, Obstacle.YEnd = Obstacle.X, Obstacle.Y
         Obstacle.lenght = lenght or 1 --Longueur de l'obstalce en blocs
         Obstacle.dir = dir or 1       --Direction 1: X croissant, 2: X décroissant, 3: Y croissant, 4: osjoxcbn
-        Obstacle.name = name or "UwU"
+        Obstacle.name = name
         Obstacle.color = {}
             Obstacle.color.bg   = color or {62/255, 142/255, 13/255}    --Couleur de l'obstacle
             Obstacle.color.line = {62/255, 142/255, 13/255}             --Couleur du contour (Non implémenté)
@@ -21,7 +21,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide - casePxSide
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide
                 for i = Obstacle.Xmap, Obstacle.Xmap + Obstacle.lenght-1 do
-                    map[i][Obstacle.Ymap].state = "obstacle"
+                    map[i][Obstacle.Ymap].state = Obstacle.name
                 end
             elseif Obstacle.dir == 2 then
                 Obstacle.XmapEnd = - Obstacle.lenght
@@ -29,7 +29,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide 
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide
                 for i = Obstacle.Xmap, Obstacle.Xmap - Obstacle.lenght+1, -1 do
-                    map[i][Obstacle.Ymap].state = "obstacle"
+                    map[i][Obstacle.Ymap].state = Obstacle.name
                 end
             elseif Obstacle.dir == 3 then
                 Obstacle.XmapEnd = 1
@@ -37,7 +37,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide - casePxSide
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide
                 for i = Obstacle.Ymap, Obstacle.Ymap + Obstacle.lenght-1 do
-                    map[Obstacle.Xmap][i].state = "obstacle"
+                    map[Obstacle.Xmap][i].state = Obstacle.name
                 end
             elseif Obstacle.dir == 4 then
                 Obstacle.XmapEnd = 1
@@ -45,7 +45,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
                 Obstacle.X = Obstacle.Xmap * casePxSide - casePxSide
                 Obstacle.Y = Obstacle.Ymap * casePxSide 
                 for i = Obstacle.Ymap, Obstacle.Ymap - Obstacle.lenght+1, -1 do
-                    map[Obstacle.Xmap][i].state = "obstacle"
+                    map[Obstacle.Xmap][i].state = Obstacle.name
                 end
             end
             Obstacle.XEnd = Obstacle.XmapEnd * casePxSide 
@@ -73,4 +73,8 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
             end
         end
     return Obstacle
+end
+
+obstacle.move = function(Obstacle, persoX, persoY, dir)
+  Obstacle
 end

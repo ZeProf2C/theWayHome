@@ -7,6 +7,14 @@
 --licence         : CC-BY-NC
 --statut          : Dev Alpha
 --==============================================================================
+--[[
+Directions : 
+  1 - X croissants (vers la droite)
+  2 - X décroissants (vers la gauche)
+  3 - Y croissants (vers le bas)
+  4 - Y décroissants (vers le haut)
+]]--
+--==============================================================================
 io.stdout:setvbuf('no')
 
 mainFont = love.graphics.newFont(14)
@@ -23,7 +31,7 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(4, 4, 4, 4, nil, "obs")
+obs = obstacle.new(4, 4, 3, 4, {25/255, 14/255, 130/255}, "obs")
 uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
 
 function love.update(dt)
