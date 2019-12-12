@@ -22,29 +22,41 @@ end
 function love.keypressed(key)
   if key == controls.right and Perso.XMap < caseCountWidth then
     if Map[Perso.XMap + 1][Perso.YMap].busy == true then
-      obstacle.move(Map[Perso.XMap + 1][Perso.YMap].state)
+      obstacle.move(Map[Perso.XMap + 1][Perso.YMap].state, Perso.Xmap, Perso.Ymap,  1)
     else
       Map[Perso.XMap][Perso.YMap].state = "vide"
       Perso.XMap = Perso.XMap + 1
       Map[Perso.XMap][Perso.YMap].state = "perso"
     end
   end
-  if  key == controls.left and Perso.XMap > 1 and Map[Perso.XMap - 1][Perso.YMap].busy == false  then
-    Map[Perso.XMap][Perso.YMap].state = "vide"
-    Perso.XMap = Perso.XMap - 1
-    Map[Perso.XMap][Perso.YMap].state = "perso"
+  if  key == controls.left and Perso.XMap > 1 then
+    if Map[Perso.XMap - 1][Perso.YMap].busy == true then
+      obstacle.move(Map[Perso.XMap - 1][Perso.YMap].state, Perso.Xmap, Perso.Ymap,  2)
+    else
+      Map[Perso.XMap][Perso.YMap].state = "vide"
+      Perso.XMap = Perso.XMap - 1
+      Map[Perso.XMap][Perso.YMap].state = "perso"
+    end
   end
   
-  if  key == controls.up and Perso.YMap > 1 and Map[Perso.XMap][Perso.YMap - 1].busy == false then
-    Map[Perso.XMap][Perso.YMap].state = "vide"
-    Perso.YMap = Perso.YMap - 1
-    Map[Perso.XMap][Perso.YMap].state = "perso"
+  if  key == controls.up and Perso.YMap > 1 then
+    if Map[Perso.XMap][Perso.YMap - 1].busy == true then
+      obstacle.move(Map[Perso.XMap][Perso.YMap - 1].state, Perso.Xmap, Perso.Ymap,  4)
+    else
+      Map[Perso.XMap][Perso.YMap].state = "vide"
+      Perso.YMap = Perso.YMap - 1
+      Map[Perso.XMap][Perso.YMap].state = "perso"
+    end
   end
   
-  if  key == controls.down and Perso.YMap < caseCountHeight and Map[Perso.XMap][Perso.YMap + 1].busy == false then
-    Map[Perso.XMap][Perso.YMap].state = "vide"
-    Perso.YMap = Perso.YMap + 1
-    Map[Perso.XMap][Perso.YMap].state = "perso"
+  if  key == controls.down and Perso.YMap < caseCountHeight then
+    if Map[Perso.XMap][Perso.YMap + 1].busy == true then
+      obstacle.move(Map[Perso.XMap][Perso.YMap + 1].state, Perso.Xmap, Perso.Ymap,  3)
+    else
+      Map[Perso.XMap][Perso.YMap].state = "vide"
+      Perso.YMap = Perso.YMap + 1
+      Map[Perso.XMap][Perso.YMap].state = "perso"
+    end
   end
 
   if key==controls.quit then

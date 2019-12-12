@@ -76,5 +76,11 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
 end
 
 obstacle.move = function(Obstacle, persoX, persoY, dir)
-  Obstacle
+  if dir == 1 or dir == 2 then
+    if(Obstacle.dir == 1 or Obstacle == 2) and (Obstacle.XmapEnd == caseCountWidth or Obstacle.XmapEnd == caseCountWidth) then
+      print("lobstacle bouge")
+    else
+      print("ca bouge pas")
+    end
+  end
 end
