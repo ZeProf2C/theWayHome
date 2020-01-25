@@ -1,5 +1,6 @@
 obstacle = {}
 
+
 obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les autres params sont facultatifs. Retourne un obj
     local Obstacle = {}
         Obstacle.Xmap = Xmap 
@@ -12,7 +13,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
         Obstacle.color = {}
             Obstacle.color.bg   = color or {62/255, 142/255, 13/255}    --Couleur de l'obstacle
             Obstacle.color.line = {62/255, 142/255, 13/255}             --Couleur du contour (Non implémenté)
-        Obstacle.file = "ressources/images/obstacle.png"    --Image de fond de l'obstacle (Non implémenté)
+        
 
         Obstacle.update = function(map) --Prends un objet map et calcul les coords reels de l'obstacle. Rends .busy ses positions. Ne retourne rien
             if Obstacle.dir == 1 then
@@ -53,8 +54,9 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
         end
 
         Obstacle.draw = function() 
-            love.graphics.setColor(Obstacle.color.bg)
-            love.graphics.rectangle("fill", Obstacle.X, Obstacle.Y, Obstacle.XEnd, Obstacle.YEnd)
+            --love.graphics.setColor(Obstacle.color.bg)
+            --love.graphics.rectangle("fill", Obstacle.X, Obstacle.Y, Obstacle.XEnd, Obstacle.YEnd)
+            love.graphics.draw(obstacle.Img, Obstacle.X, Obstacle.Y,0,Obstacle.XmapEnd/obstacle.scale, Obstacle.YmapEnd/obstacle.scale)
         end
 
         Obstacle.move = function(dir)

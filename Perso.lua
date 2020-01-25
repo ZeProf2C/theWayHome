@@ -13,10 +13,7 @@ function Perso.update()
 end
 
 function Perso.draw()
-  love.graphics.setColor(Perso.Color.bg)
-  love.graphics.circle("fill",Perso.X,Perso.Y,Perso.radius,111)
-  love.graphics.setColor(Perso.Color.name)
-  love.graphics.print( Perso.nom,Perso.X,Perso.Y,0,1,1,mainFont:getWidth(Perso.nom)/2,mainFont:getHeight(Perso.nom)/2)
+  love.graphics.draw(Perso.Img,Perso.X,Perso.Y,0,0.4,0.4,Perso.Width/2,Perso.Height/2)
 end
 
 function love.keypressed(key)

@@ -34,20 +34,38 @@ love.window.setMode(WIDTH,HEIGHT)
 obs = obstacle.new(4, 4, 3, 4, {25/255, 14/255, 130/255}, "obs")
 uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
 
+function love.load ()
+  Perso.Img       = love.graphics.newImage("ressources/Images/Pascal.png")
+  Perso.Width     = Perso.Img:getWidth()
+  Perso.Height    = Perso.Img:getHeight()
+  obstacle.Img    = love.graphics.newImage("ressources/Images/bloc.png")
+  obstacle.Width  = obstacle.Img:getWidth()
+  obstacle.scale  = obstacle.Width/casePxSide
+  Background      = love.graphics.newImage("ressources/Images/maptest1.jpg")
+  music           = love.audio.newSource("ressources/musiques/Musique2.wav","stream")
+
+    
+end
+
 function love.update(dt)
   Map.update()
   Perso.update()
   obs.update(Map)
   uli.update(Map)
+  music: setLooping(true)
+  music: play()
 end
 
+
 function love.draw()
+  love.graphics.setColor(1,1,1)
+  love.graphics.draw(Background,0,0,0,0.5,0.5)
   love.graphics.setFont(mainFont)
-  love.graphics.setBackgroundColor (0.2,0.2,0.2)
   Perso.draw()
 
   obs.draw()
   uli.draw()
 
-  Map.draw(true)
+  Map.draw(false)
+  
 end
