@@ -35,14 +35,14 @@ obs = obstacle.new(4, 4, 3, 4, {25/255, 14/255, 130/255}, "obs")
 uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
 
 function love.load ()
-  Perso.Img       = love.graphics.newImage("ressources/Images/Pascal.png")
+  Perso.Img       = love.graphics.newImage("ressources/Images/Pascal.png")   -- chargement des fichiers son et image
   Perso.Width     = Perso.Img:getWidth()
   Perso.Height    = Perso.Img:getHeight()
   obstacle.Img    = love.graphics.newImage("ressources/Images/bloc.png")
   obstacle.Width  = obstacle.Img:getWidth()
-  obstacle.scale  = obstacle.Width/casePxSide
+  obstacle.scale  = obstacle.Width/casePxSide -- variable adaptant l'image au format des cases
   Background      = love.graphics.newImage("ressources/Images/maptest1.jpg")
-  music           = love.audio.newSource("ressources/musiques/Musique2.wav","stream")
+  music           = love.audio.newSource("ressources/musiques/Musique1.wav","stream")
 
     
 end

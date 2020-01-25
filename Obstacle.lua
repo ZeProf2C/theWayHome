@@ -54,8 +54,6 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
         end
 
         Obstacle.draw = function() 
-            --love.graphics.setColor(Obstacle.color.bg)
-            --love.graphics.rectangle("fill", Obstacle.X, Obstacle.Y, Obstacle.XEnd, Obstacle.YEnd)
             love.graphics.draw(obstacle.Img, Obstacle.X, Obstacle.Y,0,Obstacle.XmapEnd/obstacle.scale, Obstacle.YmapEnd/obstacle.scale)
         end
 
