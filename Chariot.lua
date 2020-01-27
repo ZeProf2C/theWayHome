@@ -2,8 +2,8 @@ chariot = {}
 
 chariot.new = function(Xmap, Ymap, image)
   local Chariot = {}
-   Chariot.Xmap = 0
-   Chariot.Ymap = -3
+   Chariot.Xmap =1
+   Chariot.Ymap = 5
    Chariot.X = Chariot.Xmap * casePxSide - casePxSide
    Chariot.Y = Chariot.Ymap * casePxSide - casePxSide
    Chariot.speed = 100
@@ -15,7 +15,7 @@ chariot.new = function(Xmap, Ymap, image)
     end
     
     Chariot.draw = function()
-      love.graphics.draw(Chariot.image, Chariot.X, Chariot.Y)
+      love.graphics.draw(Chariot.image, Chariot.X, Chariot.Y,0,0.2,0.2)
     end
   return Chariot
   end
