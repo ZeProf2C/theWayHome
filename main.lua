@@ -32,8 +32,8 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(4, 6, 3, 4, "ressources/images/bloc.png", "obs")
-uli = obstacle.new(1, 9, 1, 1, "ressources/images/bloc.png", "uli")
+obs = obstacle.new(4, 6, 4, 4, "ressources/images/bloc.png", "obs")
+uli = obstacle.new(3, 2,3, 1, "ressources/images/bloc.png", "uli")
 
 char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
 
