@@ -13,7 +13,7 @@ function Perso.update()
 end
 
 function Perso.draw()
-  love.graphics.draw(Perso.Img,Perso.X,Perso.Y,0,0.4,0.4,Perso.Width/2,Perso.Height/2)
+  love.graphics.draw(Perso.Img,Perso.X,Perso.Y,0,0.15,0.15,Perso.Width/2,Perso.Height/2)
 end
 
 function love.keypressed(key)
