@@ -23,6 +23,7 @@ require("xml")
 require("Map")
 require("Perso")  
 require("Obstacle")
+require("Chariot")
 
 WIDTH, HEIGHT = love.window.getDesktopDimensions(1)
 while caseCountWidth*casePxSide >= WIDTH and caseCountHeight*casePxSide >= HEIGHT do
@@ -33,6 +34,8 @@ love.window.setMode(WIDTH,HEIGHT)
 
 obs = obstacle.new(4, 4, 3, 4, {25/255, 14/255, 130/255}, "obs")
 uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
+
+char = chariot.new(5, 1, "ressources/images/chariot.png")
 
 function love.load ()
   Perso.Img       = love.graphics.newImage("ressources/Images/Pascal.png")   -- chargement des fichiers son et image
@@ -52,6 +55,7 @@ function love.update(dt)
   Perso.update()
   obs.update(Map)
   uli.update(Map)
+  char.update(Map)
   music: setLooping(true)
   music: play()
 end
@@ -65,7 +69,9 @@ function love.draw()
 
   obs.draw()
   uli.draw()
-
+  
+  char.draw()
+  
   Map.draw(false)
   
 end

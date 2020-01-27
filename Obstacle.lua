@@ -77,9 +77,10 @@ end
 
 obstacle.move = function(Obstacle, persoX, persoY, dir)
   if dir == 1 or dir == 2 then
-    if(Obstacle.dir == 1 or Obstacle == 2) and (Obstacle.XmapEnd == caseCountWidth or Obstacle.XmapEnd == caseCountWidth) then
+    if(Obstacle.dir == 1 or Obstacle.dir == 2) then
       print("lobstacle bouge")
     else
+      print(Obstacle)
       print("ca bouge pas")
     end
   end
