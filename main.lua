@@ -45,7 +45,7 @@ function love.load ()
   obstacle.Width  = obstacle.Img:getWidth()
   obstacle.scale  = obstacle.Width/casePxSide -- variable adaptant l'image au format des cases
   Background      = love.graphics.newImage("ressources/Images/Grotte.jpg")
-  rail           = love.graphics.newImage("ressources/Images/rail.png")
+  rail            = love.graphics.newImage("ressources/Images/rail.png")
   music           = love.audio.newSource("ressources/musiques/Musique1.wav","stream")
 
     
