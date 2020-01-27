@@ -1,7 +1,7 @@
 obstacle = {}
 
 
-obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les autres params sont facultatifs. Retourne un obj
+obstacle.new = function(Xmap, Ymap, lenght, dir, image, name) 
     local Obstacle = {}
         Obstacle.Xmap = Xmap 
         Obstacle.Ymap = Ymap          --X et Y de départ sur la map
@@ -10,9 +10,10 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
         Obstacle.lenght = lenght or 1 --Longueur de l'obstalce en blocs
         Obstacle.dir = dir or 1       --Direction 1: X croissant, 2: X décroissant, 3: Y croissant, 4: osjoxcbn
         Obstacle.name = name
-        Obstacle.color = {}
-            Obstacle.color.bg   = color or {62/255, 142/255, 13/255}    --Couleur de l'obstacle
-            Obstacle.color.line = {62/255, 142/255, 13/255}             --Couleur du contour (Non implémenté)
+        Obstacle.image = {}
+            Obstacle.image.src   = love.graphics.newImage(image)
+            Obstacle.image.width = Obstacle.image.src:getWidth()
+            Obstacle.image.scale = Obstacle.image.width/casePxSide
         
 
         Obstacle.update = function(map) --Prends un objet map et calcul les coords reels de l'obstacle. Rends .busy ses positions. Ne retourne rien
@@ -54,7 +55,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, color, name) --X et Y map, les 
         end
 
         Obstacle.draw = function() 
-            love.graphics.draw(obstacle.Img, Obstacle.X, Obstacle.Y,0,Obstacle.XmapEnd/obstacle.scale, Obstacle.YmapEnd/obstacle.scale)
+            love.graphics.draw(Obstacle.image.src, Obstacle.X, Obstacle.Y,0,Obstacle.XmapEnd/Obstacle.image.scale, Obstacle.YmapEnd/Obstacle.image.scale)
         end
 
         Obstacle.move = function(dir)

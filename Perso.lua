@@ -4,9 +4,10 @@ Perso.YMap  = 1
 Perso.radius = 30
 Perso.nom   = "Pascal"
 Perso.dir = 0 --Orientation du perso en Degre
-Perso.Color = {} 
-  Perso.Color.bg = {0.8,0.8,0.8}
-  Perso.Color.name = {0.2,0.2,0.2}
+Perso.image = {} 
+  Perso.image.src    = love.graphics.newImage("ressources/Images/Pascal.png")
+  Perso.image.width  = Perso.image.src:getWidth()
+  Perso.image.height = Perso.image.src:getHeight()
 
 function Perso.update()
   Perso.X     = Perso.XMap * casePxSide - casePxSide/2
@@ -14,7 +15,7 @@ function Perso.update()
 end
 
 function Perso.draw()
-  love.graphics.draw(Perso.Img,Perso.X,Perso.Y, math.rad(Perso.dir),0.15,0.15,Perso.Width/2,Perso.Height/2)
+  love.graphics.draw(Perso.image.src,Perso.X,Perso.Y, math.rad(Perso.dir),0.15,0.15,Perso.image.width/2,Perso.image.height/2)
 end
 
 function love.keypressed(key)

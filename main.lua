@@ -32,20 +32,13 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(4, 6, 3, 4, {25/255, 14/255, 130/255}, "obs")
-uli = obstacle.new(1, 9, 1, 1, {25/255, 14/255, 130/255}, "uli")
+obs = obstacle.new(4, 6, 3, 4, "ressources/images/bloc.png", "obs")
+uli = obstacle.new(1, 9, 1, 1, "ressources/images/bloc.png", "uli")
 
-char = chariot.new(5, 1, "ressources/images/chariot.png")
+char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
 
 function love.load ()
-  Perso.Img       = love.graphics.newImage("ressources/Images/Pascal.png")   -- chargement des fichiers son et image
-  Perso.Width     = Perso.Img:getWidth()
-  Perso.Height    = Perso.Img:getHeight()
-  obstacle.Img    = love.graphics.newImage("ressources/Images/bloc.png")
-  obstacle.Width  = obstacle.Img:getWidth()
-  obstacle.scale  = obstacle.Width/casePxSide -- variable adaptant l'image au format des cases
-  Background      = love.graphics.newImage("ressources/Images/Grotte.jpg")
-  rail            = love.graphics.newImage("ressources/Images/rail.png")
+  backgroundImage = love.graphics.newImage("ressources/Images/Grotte.jpg")
   music           = love.audio.newSource("ressources/musiques/Musique1.wav","stream")
 
     
@@ -64,14 +57,12 @@ end
 
 function love.draw()
   love.graphics.setColor(1,1,1)
-  love.graphics.draw(Background,0,0,0,0.4,0.4)
+  love.graphics.draw(backgroundImage,0,0,0,0.4,0.4)
   love.graphics.setFont(mainFont)
-  
-  char.drawRails()
+
+  char.draw()
 
   Perso.draw()
-  
-  char.draw()
 
   obs.draw()
   uli.draw()
