@@ -36,6 +36,10 @@ obs = obstacle.new(4, 6, 3, 4, "ressources/images/bloc.png", "obs")
 uli = obstacle.new(1, 9, 1, 1, "ressources/images/bloc.png", "uli")
 
 char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
+charSpeed = 100
+
+dtSum = 0 
+UpdtTime = 1 
 
 function love.load ()
   backgroundImage = love.graphics.newImage("ressources/Images/Grotte.jpg")
@@ -45,13 +49,18 @@ function love.load ()
 end
 
 function love.update(dt)
+  dtSum = dtSum + dt
   Map.update()
   Perso.update()
   obs.update(Map)
   uli.update(Map)
-  char.update(Map)
   music: setLooping(true)
   music: play()
+
+  if dtSum > UpdtTime then
+    char.update(Map)
+    dtSum = 0
+  end
 end
 
 
