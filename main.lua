@@ -44,7 +44,7 @@ function love.load ()
   obstacle.Img    = love.graphics.newImage("ressources/Images/bloc.png")
   obstacle.Width  = obstacle.Img:getWidth()
   obstacle.scale  = obstacle.Width/casePxSide -- variable adaptant l'image au format des cases
-  Background      = love.graphics.newImage("ressources/Images/maptest1.jpg")
+  Background      = love.graphics.newImage("ressources/Images/Grotte.jpg")
   music           = love.audio.newSource("ressources/musiques/Musique1.wav","stream")
 
     
@@ -63,7 +63,7 @@ end
 
 function love.draw()
   love.graphics.setColor(1,1,1)
-  love.graphics.draw(Background,0,0,0,0.5,0.5)
+  love.graphics.draw(Background,0,0,0,0.4,0.4)
   love.graphics.setFont(mainFont)
   Perso.draw()
 
