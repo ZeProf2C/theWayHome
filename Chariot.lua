@@ -11,6 +11,11 @@ chariot.new = function(Xmap, Ymap, image, railImage)
 
    Chariot.rail = {}
     Chariot.rail.src = love.graphics.newImage(railImage)
+  
+   Chariot.load = function(map)
+    map[Chariot.Xmap][Chariot.Ymap].state = "chariot"
+    map[Chariot.Xmap+1][Chariot.Ymap].state = "chariot"
+   end
 
    Chariot.update = function(map)
       if map[Chariot.Xmap+2][Chariot.Ymap].busy == false and Chariot.Xmap+Chariot.speed+1 < caseCountWidth then

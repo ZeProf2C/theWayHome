@@ -34,6 +34,7 @@ love.window.setMode(WIDTH,HEIGHT)
 
 obs = obstacle.new(7, 6, 4, 4, "ressources/images/bloc.png", "obs")
 uli = obstacle.new(3, 2, 3, 1, "ressources/images/bloc.png", "uli")
+nenenene = obstacle.new(5, 8, 1, 1, "ressources/images/bloc.png", "nenenene")
 
 char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
 charSpeed = 100
@@ -43,8 +44,10 @@ UpdtTime = 1
 
 function love.load ()
   backgroundImage = love.graphics.newImage("ressources/Images/Grotte.jpg")
-  music           = love.audio.newSource("ressources/musiques/Musique1.wav","static")
 
+  char.load(Map)
+
+  music           = love.audio.newSource("ressources/musiques/Musique1.wav","static")
   music: setLooping(true)
   music: setVolume(1)
   music: play()  
@@ -56,6 +59,7 @@ function love.update(dt)
   Perso.update()
   obs.update(Map)
   uli.update(Map)
+  nenenene.update(Map)
   
 
   if dtSum > UpdtTime then
@@ -76,9 +80,10 @@ function love.draw()
 
   obs.draw()
   uli.draw()
+  nenenene.draw()
   
 
-  Map.draw(false)
+  Map.draw(true)
 
   
 end
