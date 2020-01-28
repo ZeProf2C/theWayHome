@@ -22,6 +22,7 @@ chariot.new = function(Xmap, Ymap, image, railImage)
       Chariot.X = Chariot.Xmap * casePxSide - casePxSide
       Chariot.Y = Chariot.Ymap * casePxSide - casePxSide
       
+      map[Chariot.Xmap-1][Chariot.Ymap].state = "vide"
       map[Chariot.Xmap][Chariot.Ymap].state = "chariot"
       map[Chariot.Xmap+1][Chariot.Ymap].state = "chariot"
     end
