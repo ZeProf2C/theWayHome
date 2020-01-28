@@ -43,9 +43,11 @@ UpdtTime = 1
 
 function love.load ()
   backgroundImage = love.graphics.newImage("ressources/Images/Grotte.jpg")
-  music           = love.audio.newSource("ressources/musiques/Musique1.wav","stream")
+  music           = love.audio.newSource("ressources/musiques/Musique1.wav","static")
 
-    
+  music: setLooping(true)
+  music: setVolume(1)
+  music: play()  
 end
 
 function love.update(dt)
@@ -54,8 +56,7 @@ function love.update(dt)
   Perso.update()
   obs.update(Map)
   uli.update(Map)
-  music: setLooping(true)
-  music: play()
+  
 
   if dtSum > UpdtTime then
     char.update(Map)
