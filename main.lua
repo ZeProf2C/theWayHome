@@ -10,9 +10,9 @@
 --[[
 Directions : 
   1 - X croissants (vers la droite)
-  2 - X décroissants (vers la gauche)
+  UNUSED 2 - X décroissants (vers la gauche)
   3 - Y croissants (vers le bas)
-  4 - Y décroissants (vers le haut)
+  UNUSED 4 - Y décroissants (vers le haut)
 ]]--
 --==============================================================================
 io.stdout:setvbuf('no')
@@ -32,7 +32,7 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(7, 6, 4, 4, "ressources/images/bloc.png", "obs")
+obs = obstacle.new(7, 3, 4, 3, "ressources/images/bloc.png", "obs")
 uli = obstacle.new(6, 2, 3, 1, "ressources/images/bloc.png", "uli")
 nenenene = obstacle.new(6, 7, 2, 1, "ressources/images/bloc.png", "nenenene")
 

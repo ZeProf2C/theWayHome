@@ -71,13 +71,13 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
 
         Obstacle.move = function(key, map)
             if (Obstacle.dir == 1 or Obstacle.dir == 2) and key == controls.right then
-                if Perso.XMap == Obstacle.Xmap-1 and Perso.YMap == Obstacle.Ymap then
+                if Perso.XMap == Obstacle.Xmap-1 and Perso.YMap == Obstacle.Ymap and map[Obstacle.XmapEnd][Obstacle.Ymap].busy == false then
                     Obstacle.Xmap = Obstacle.Xmap + 1
                     Obstacle.XmapEnd = Obstacle.XmapEnd + 1
                     map[Obstacle.Xmap-1][Obstacle.Ymap].state = "vide"
                 end
             end
-            if (Obstacle.dir == 1 or Obstacle.dir == 2) and key == controls.left then
+            if (Obstacle.dir == 1 or Obstacle.dir == 2) and key == controls.left and map[Obstacle.Xmap - 1][Obstacle.Ymap].busy == false then
                 if Perso.XMap == Obstacle.XmapEnd and Perso.YMap == Obstacle.Ymap then
                     Obstacle.Xmap = Obstacle.Xmap - 1
                     Obstacle.XmapEnd = Obstacle.XmapEnd - 1
@@ -85,17 +85,17 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
                 end
             end
             if (Obstacle.dir == 3 or Obstacle.dir == 4) and key == controls.up then
+                if Perso.XMap == Obstacle.Xmap and Perso.YMap == Obstacle.YmapEnd and map[Obstacle.Xmap][Obstacle.Ymap - 1].busy == false then
+                    Obstacle.Ymap = Obstacle.Ymap - 1
+                    Obstacle.YmapEnd = Obstacle.YmapEnd - 1
+                    map[Obstacle.Xmap][Obstacle.YmapEnd].state = "vide"
+                end
+            end
+            if (Obstacle.dir == 3 or Obstacle.dir == 4) and key == controls.down and map[Obstacle.Xmap][Obstacle.YmapEnd].busy == false then
                 if Perso.XMap == Obstacle.Xmap and Perso.YMap == Obstacle.Ymap-1 then
                     Obstacle.Ymap = Obstacle.Ymap + 1
                     Obstacle.YmapEnd = Obstacle.YmapEnd + 1
                     map[Obstacle.Xmap][Obstacle.Ymap-1].state = "vide"
-                end
-            end
-            if (Obstacle.dir == 3 or Obstacle.dir == 4) and key == controls.down then
-                if Perso.XMap == Obstacle.Xmap and Perso.YMap == Obstacle.Ymap-1 then
-                    Obstacle.Ymap = Obstacle.Ymap - 1
-                    Obstacle.YmapEnd = Obstacle.YmapEnd - 1
-                    map[Obstacle.Xmap][Obstacle.YmapEnd-1].state = "vide"
                 end
             end
         end
