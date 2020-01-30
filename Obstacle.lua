@@ -58,31 +58,24 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
             love.graphics.draw(Obstacle.image.src, Obstacle.X, Obstacle.Y,0,Obstacle.XmapEnd/Obstacle.image.scale, Obstacle.YmapEnd/Obstacle.image.scale)
         end
 
-        Obstacle.move = function(dir)
-            if dir == 1 or dir == 2 then
-                if Obstacle.dir == 1 or Obstacle.dir == 2 then
-
-                else
-                    return 1
+        Obstacle.move = function(key, map)
+            if (Obstacle.dir == 1 or Obstacle.dir == 2) and key == controls.right then
+                if Perso.XMap == Obstacle.Xmap-1 and Perso.YMap == Obstacle.Ymap then
+                    Obstacle.Xmap = Obstacle.Xmap + 1
+                    Obstacle.XmapEnd = Obstacle.XmapEnd + 1
+                    map[Obstacle.Xmap-1][Obstacle.Ymap].state = "vide"
                 end
-            elseif dir == 3 or dir == 4 then
-                if Obstacle.dir == 3 or Obstacle.dir == 4 then
-
-                else
-                    return 1
+            end
+            if (Obstacle.dir == 1 or Obstacle.dir == 2) and key == controls.left then
+                if Perso.XMap == Obstacle.Xmap+1 and Perso.YMap == Obstacle.Ymap then
+                    Obstacle.Xmap = Obstacle.Xmap - 1
+                    Obstacle.XmapEnd = Obstacle.XmapEnd - 1
+                    map[Obstacle.Xmap+1][Obstacle.Ymap].state = "vide"
                 end
             end
         end
     return Obstacle
 end
 
-obstacle.move = function(Obstacle, persoX, persoY, dir)
-  if dir == 1 or dir == 2 then
-    if(Obstacle.dir == 1 or Obstacle.dir == 2) then
-      print("lobstacle bouge")
-    else
-      print(Obstacle)
-      print("ca bouge pas")
-    end
-  end
+obstacle.move = function()
 end

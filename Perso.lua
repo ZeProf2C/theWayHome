@@ -19,6 +19,9 @@ function Perso.draw()
 end
 
 function love.keypressed(key)
+  uli.move(key, Map)
+  nenenene.move(key, Map)
+
   if key == controls.right and Perso.XMap < caseCountWidth then
     Perso.dir = 0
     if Map[Perso.XMap + 1][Perso.YMap].busy == true then

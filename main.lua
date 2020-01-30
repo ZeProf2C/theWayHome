@@ -83,7 +83,5 @@ function love.draw()
   nenenene.draw()
   
 
-  Map.draw(false)
-
-  
+  Map.draw(true)
 end
