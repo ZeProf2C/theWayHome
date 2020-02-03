@@ -75,6 +75,11 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
                     Obstacle.Xmap = Obstacle.Xmap + 1
                     Obstacle.XmapEnd = Obstacle.XmapEnd + 1
                     map[Obstacle.Xmap-1][Obstacle.Ymap].state = "vide"
+                    map[Obstacle.Xmap-1][Obstacle.Ymap].busy = false
+
+                    if key == controls.right and Perso.XMap < caseCountWidth then
+                        Perso.move("right")
+                    end
                 end
             end
             if (Obstacle.dir == 1 or Obstacle.dir == 2) and key == controls.left and map[Obstacle.Xmap - 1][Obstacle.Ymap].busy == false then
@@ -82,6 +87,11 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
                     Obstacle.Xmap = Obstacle.Xmap - 1
                     Obstacle.XmapEnd = Obstacle.XmapEnd - 1
                     map[Obstacle.XmapEnd][Obstacle.Ymap].state = "vide"
+                    map[Obstacle.XmapEnd][Obstacle.Ymap].busy = false
+
+                    if  key == controls.left and Perso.XMap > 1 then
+                        Perso.move("left")
+                    end
                 end
             end
             if (Obstacle.dir == 3 or Obstacle.dir == 4) and key == controls.up then
@@ -89,6 +99,11 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
                     Obstacle.Ymap = Obstacle.Ymap - 1
                     Obstacle.YmapEnd = Obstacle.YmapEnd - 1
                     map[Obstacle.Xmap][Obstacle.YmapEnd].state = "vide"
+                    map[Obstacle.Xmap][Obstacle.YmapEnd].busy = false
+
+                    if  key == controls.up and Perso.YMap > 1 then
+                        Perso.move("up")
+                    end
                 end
             end
             if (Obstacle.dir == 3 or Obstacle.dir == 4) and key == controls.down and map[Obstacle.Xmap][Obstacle.YmapEnd].busy == false then
@@ -96,6 +111,11 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
                     Obstacle.Ymap = Obstacle.Ymap + 1
                     Obstacle.YmapEnd = Obstacle.YmapEnd + 1
                     map[Obstacle.Xmap][Obstacle.Ymap-1].state = "vide"
+                    map[Obstacle.Xmap][Obstacle.Ymap-1].busy = false
+
+                    if  key == controls.down and Perso.YMap < caseCountHeight then
+                        Perso.move("down")
+                    end
                 end
             end
         end
