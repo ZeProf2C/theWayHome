@@ -25,6 +25,14 @@ require("Perso")
 require("Obstacle")
 require("Chariot")
 
+sceneList = {}
+sceneList.Intro    = require("titlescreen")
+sceneList.Menu     = require("menu")
+sceneList.Game     = require("scene_Game")
+sceneList.settings = require("scene_Otions")
+
+currentScene = sceneList.Intro
+
 WIDTH, HEIGHT = love.window.getDesktopDimensions(1)
 while caseCountWidth*casePxSide >= WIDTH and caseCountHeight*casePxSide >= HEIGHT do
   casePxSide = casePxSide-3
