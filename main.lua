@@ -18,37 +18,28 @@ Directions :
 io.stdout:setvbuf('no')
 
 mainFont = love.graphics.newFont(14)
-
-require("xml")
-require("Map")
-require("Perso")  
-require("Obstacle")
-require("Chariot")
-
-sceneList = {}
-sceneList.Intro    = require("titlescreen")
-sceneList.Menu     = require("menu")
-sceneList.Game     = require("scene_Game")
-sceneList.settings = require("scene_Otions")
-
-currentScene = sceneList.Intro
-
 WIDTH, HEIGHT = love.window.getDesktopDimensions(1)
+
+caseCountWidth  = 10
+caseCountHeight = 9
+casePxSide      = 80
+
 while caseCountWidth*casePxSide >= WIDTH and caseCountHeight*casePxSide >= HEIGHT do
   casePxSide = casePxSide-3
 end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
-obs = obstacle.new(7, 3, 4, 3, "ressources/images/bloc.png", "obs")
-uli = obstacle.new(6, 2, 3, 1, "ressources/images/bloc.png", "uli")
-nenenene = obstacle.new(6, 7, 2, 1, "ressources/images/bloc.png", "nenenene")
+sceneList = {}
+sceneList.Intro    = require("titlescreen")
+sceneList.Menu     = require("menu")
+sceneList.Game     = require("game")
+sceneList.settings = require("menu")
 
-char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
-charSpeed = 100
+currentScene = sceneList.Intro
 
-dtSum = 0 
-UpdtTime = 1 
+
+
 
 function love.load()
   backgroundImage = love.graphics.newImage("ressources/Images/Grotte.jpg")
@@ -58,38 +49,22 @@ function love.load()
   music = love.audio.newSource("ressources/musiques/Musique1.wav","static")
   music: setLooping(true)
   music: setVolume(1)
-  music: play()  
+  music: play()
 end
 
 function love.update(dt)
-  dtSum = dtSum + dt
-  Map.update()
-  Perso.update()
-  obs.update(Map)
-  uli.update(Map)
-  nenenene.update(Map)
-  
-
-  if dtSum > UpdtTime then
-    char.update(Map)
-    dtSum = 0
-  end
+  currentScene.update(dt)
 end
 
 
 function love.draw()
-  love.graphics.setColor(1,1,1)
-  love.graphics.draw(backgroundImage,0,0,0,0.4,0.4)
-  love.graphics.setFont(mainFont) 
+  currentScene.draw()
 
-  char.draw()
+end
 
-  Perso.draw()
-
-  obs.draw()
-  uli.draw()
-  nenenene.draw()
-  
-
-  Map.draw(true)
+function love.keypressed(key)
+  currentScene.keypressed(key)
+  if key == "escape" then
+      love.event.quit()
+  end
 end

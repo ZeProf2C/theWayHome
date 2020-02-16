@@ -1,27 +1,27 @@
-scene_Intro = {}
 titleScreen = {}
   titleScreen.image = {}
-    titleScreen.image.src = love.graphics.newImage("ressources/Images/ecran_titre.jpg")
+    titleScreen.image.src = love.graphics.newImage("ressources/Images/rien.jpg")
     titleScreen.image.width  = titleScreen.image.src:getWidth()
-    titleScreen.image.height = titleScreen.image.src:getHeight()
-    titleScreen.image.scaleX = titleScreen.image.width/WIDTH
-    titleScreen.image.scaleY = titleScreen.image.width/HEIGHT
+    titleScreen.image.scale = titleScreen.image.width/WIDTH
 
 
 
-function scene_Intro.update (delta)
+function titleScreen.update (delta)
     
 end
 
-function scene_Intro.draw()
-    love.graphics.draw(titleScreen.image,0,0,1,titleScreen.image.width/titleScreen.image.scaleX,titleScreen.image.height/titleScreen.image.scaleY)
+function titleScreen.draw()
+    love .graphics.setColor(1,1,1)
+    love.graphics.draw(titleScreen.image.src,0,0,0,1/titleScreen.image.scale,1/titleScreen.image.scale)
+    love .graphics.setColor(0,0,0)
+    love.graphics.print("PRESS SPACE")
 end
 
-function scene_Intro.keypressed(key)
+function titleScreen.keypressed(key)
     if key == "space" then
         currentScene = sceneList.Menu
     end
 
 end
 
-return scene_Intro
+return titleScreen

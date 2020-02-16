@@ -1,6 +1,3 @@
-caseCountWidth  = 10
-caseCountHeight = 9
-casePxSide      = 80
 
 
 function CreateCase(i,j)
