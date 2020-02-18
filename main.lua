@@ -49,7 +49,6 @@ function love.load()
   music = love.audio.newSource("ressources/musiques/Musique1.wav","static")
   music: setLooping(true)
   music: setVolume(1)
-  music: play()
 end
 
 function love.update(dt)

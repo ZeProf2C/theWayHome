@@ -50,7 +50,7 @@ function game.draw()
 
 end
 
-function sceneMenu.keypressed(key)
+function game.keypressed(key)
 end
 
 return game

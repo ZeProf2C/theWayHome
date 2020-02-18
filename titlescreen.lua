@@ -14,7 +14,7 @@ function titleScreen.draw()
     love .graphics.setColor(1,1,1)
     love.graphics.draw(titleScreen.image.src,0,0,0,1/titleScreen.image.scale,1/titleScreen.image.scale)
     love .graphics.setColor(0,0,0)
-    love.graphics.print("PRESS SPACE")
+    love.graphics.print("PRESS SPACE     TITLE SCREEN")
 end
 
 function titleScreen.keypressed(key)
