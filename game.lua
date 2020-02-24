@@ -1,5 +1,4 @@
-game = {}
-
+Game = {}
 
 require("xml")
 require("Map")
@@ -17,8 +16,9 @@ charSpeed = 100
 dtSum = 0 
 UpdtTime = 1 
 
-function game.update (delta)
-    dtSum = dtSum + delta
+
+function Game.update(dt)
+    dtSum = dtSum + dt
     Map.update()
     Perso.update()
     obs.update(Map)
@@ -32,7 +32,7 @@ function game.update (delta)
 end
 
 
-function game.draw()
+function Game.draw()
     love.graphics.setColor(1,1,1)
     love.graphics.draw(backgroundImage,0,0,0,0.4,0.4)
     love.graphics.setFont(mainFont) 
@@ -50,7 +50,8 @@ function game.draw()
 
 end
 
-function game.keypressed(key)
+function Game.keypressed(key)
+  Perso.keypressed(key)
 end
 
-return game
+return Game

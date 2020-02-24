@@ -32,7 +32,7 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
             elseif Obstacle.dir == 2 then
                 Obstacle.XmapEnd = Obstacle.Xmap - Obstacle.lenght
                 Obstacle.YmapEnd = Obstacle.Ymap
-                Obstacle.Xlenght = - Obstacle.lenght
+                Obstacle.Xlenght = -Obstacle.lenght
                 Obstacle.Ylenght = 1
                 Obstacle.X = Obstacle.Xmap * casePxSide 
                 Obstacle.Y = Obstacle.Ymap * casePxSide - casePxSide

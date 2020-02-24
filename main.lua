@@ -17,6 +17,8 @@ Directions :
 --==============================================================================
 io.stdout:setvbuf('no')
 
+
+
 mainFont = love.graphics.newFont(14)
 WIDTH, HEIGHT = love.window.getDesktopDimensions(1)
 
@@ -38,6 +40,8 @@ sceneList.settings = require("menu")
 
 currentScene = sceneList.Intro
 
+goToUpdate = true
+
 
 
 
@@ -53,11 +57,17 @@ end
 
 function love.update(dt)
   currentScene.update(dt)
+  if goToUpdate then
+    currentScene.update(dt)
+    goToUpdate = false
+  end
 end
 
 
 function love.draw()
-  currentScene.draw()
+  if goToUpdate == false then
+    currentScene.draw()
+  end
 
 end
 

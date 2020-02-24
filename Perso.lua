@@ -52,7 +52,7 @@ function Perso.move(dir)
   end
 end
 
-function love.keypressed(key)
+function Perso.keypressed(key)
   uli.move(key, Map)
   nenenene.move(key, Map)
   obs.move(key, Map)
