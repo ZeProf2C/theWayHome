@@ -53,5 +53,8 @@ end
 function Game.keypressed(key)
   Perso.keypressed(key)
 end
+function Game.mousereleased()
+end
+
 
 return Game

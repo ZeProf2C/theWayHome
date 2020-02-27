@@ -19,10 +19,11 @@ end
 
 function titleScreen.keypressed(key)
     if key == "space" then
-        goToUpdate = true
         currentScene = sceneList.Menu
     end
 
+end
+function titleScreen.mousereleased()
 end
 
 return titleScreen

@@ -40,7 +40,6 @@ sceneList.settings = require("menu")
 
 currentScene = sceneList.Intro
 
-goToUpdate = true
 
 
 
@@ -57,17 +56,11 @@ end
 
 function love.update(dt)
   currentScene.update(dt)
-  if goToUpdate then
-    currentScene.update(dt)
-    goToUpdate = false
-  end
 end
 
 
 function love.draw()
-  if goToUpdate == false then
-    currentScene.draw()
-  end
+ currentScene.draw()
 
 end
 
@@ -76,4 +69,8 @@ function love.keypressed(key)
   if key == "escape" then
       love.event.quit()
   end
+end
+
+function love.mousereleased(x, y, button)
+  currentScene.mousereleased(x, y, button)
 end

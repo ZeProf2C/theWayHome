@@ -55,22 +55,19 @@ function Menu.update()
 
   if Menu.IsIn (love.mouse.getX(),love.mouse.getY(),bt_PLAY) then
     if love.mouse.isDown(1) then
-      goToUpdate = true
-      currentScene = sceneList.Game
-      music: play()
+      
     end
   end
 
   if Menu.IsIn (love.mouse.getX(),love.mouse.getY(),bt_SETTINGS) then
     if love.mouse.isDown(1) then
-      goToUpdate = true
-      currentScene = sceneList.settings
+      
     end
   end
 
   if Menu.IsIn (love.mouse.getX(),love.mouse.getY(),bt_QUIT) then
     if love.mouse.isDown(1) then
-      love.event.quit()
+      
     end
   end
 
@@ -99,6 +96,27 @@ function Menu.draw  ()
 end
 
 function Menu.keypressed(key)
+end
+
+function Menu.mousereleased(x, y, button)
+  if Menu.IsIn (x,y,bt_PLAY) then
+    if button == 1 then
+      currentScene = sceneList.Game
+      music: play()
+    end
+  end
+  
+  if Menu.IsIn (x,y,bt_SETTINGS) then
+    if button == 1 then
+      currentScene = sceneList.settings
+    end
+  end
+  
+  if Menu.IsIn (love.mouse.getX(),love.mouse.getY(),bt_QUIT) then
+    if button == 1 then
+      love.event.quit()
+    end
+  end
 end
 
 
