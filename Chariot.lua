@@ -21,7 +21,8 @@ chariot.new = function(Xmap, Ymap, image, railImage)
       if map[Chariot.Xmap+2][Chariot.Ymap].busy == false and Chariot.Xmap+Chariot.speed+1 < caseCountWidth then
         Chariot.Xmap = Chariot.Xmap + Chariot.speed
       elseif map[Chariot.Xmap+2][Chariot.Ymap].busy == false and Chariot.Xmap+Chariot.speed+1 == caseCountWidth then
-        print("Et c'est gagné !")
+        music: stop()
+        currentScene = sceneList.victory
       end
       
       Chariot.X = Chariot.Xmap * casePxSide - casePxSide

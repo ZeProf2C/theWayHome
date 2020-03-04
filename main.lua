@@ -36,6 +36,7 @@ sceneList = {}
 sceneList.Intro    = require("titlescreen")
 sceneList.Menu     = require("menu")
 sceneList.Game     = require("game")
+sceneList.victory  = require("victoryscreen")
 sceneList.settings = require("menu")
 
 currentScene = sceneList.Intro

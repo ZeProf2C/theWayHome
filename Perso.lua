@@ -1,6 +1,6 @@
 Perso = {}
 Perso.XMap  = 1
-Perso.YMap  = 1
+Perso.YMap  = 4
 Perso.radius = 30
 Perso.nom   = "Pascal"
 Perso.dir = 0 --Orientation du perso en Degre

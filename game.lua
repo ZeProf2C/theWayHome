@@ -6,15 +6,19 @@ require("Perso")
 require("Obstacle")
 require("Chariot")
 
-obs = obstacle.new(7, 3, 4, 3, "ressources/images/bloc.png", "obs")
-uli = obstacle.new(6, 2, 3, 1, "ressources/images/bloc.png", "uli")
-nenenene = obstacle.new(6, 7, 2, 1, "ressources/images/bloc.png", "nenenene")
+levelList = {}
+levelList.l1 = require ("level1")
+levelList.l2 = require ("level2")
+
+
+currentlevel = levelList.l2
 
 char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
 charSpeed = 100
 
 dtSum = 0 
 UpdtTime = 1 
+
 
 
 function Game.update(dt)
@@ -41,11 +45,7 @@ function Game.draw()
 
     Perso.draw()
 
-    obs.draw()
-    uli.draw()
-    nenenene.draw()
-
-
+    currentlevel.draw()
     Map.draw(true)
 
 end
