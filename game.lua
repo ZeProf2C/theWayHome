@@ -7,11 +7,11 @@ require("Obstacle")
 require("Chariot")
 
 levelList = {}
-levelList.l1 = require ("level1")
-levelList.l2 = require ("level2")
+levelList.lv1 = require ("level1")
+levelList.lv2 = require ("level2")
 
 
-currentlevel = levelList.l2
+currentlevel = levelList.lv1
 
 char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
 charSpeed = 100

@@ -41,7 +41,7 @@ function victorySceen.draw()
     love.graphics.setColor(0,1,1)
     love.graphics.draw(bt_menu.image.src,bt_menu.x,bt_menu.y,0,1/bt_menu.image.scaleX,1/bt_menu.image.scaleY,bt_menu.image.width/2,bt_menu.image.width/2)
     love .graphics.setColor(0,0,0)
-    love.graphics.print("back to menu",bt_menu.x,bt_menu.y)
+    love.graphics.print("back to selection menu",bt_menu.x,bt_menu.y)
 
 end
 
@@ -50,9 +50,9 @@ end
 
 
 function victorySceen.mousereleased(x, y, button)
-    if Menu.IsIn (x,y,bt_menu) then
+    if victorySceen.IsIn (x,y,bt_menu) then
       if button == 1 then
-        currentScene = sceneList.Menu
+        currentScene = sceneList.Menulevel
       end
     end
 end

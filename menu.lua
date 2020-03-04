@@ -101,8 +101,7 @@ end
 function Menu.mousereleased(x, y, button)
   if Menu.IsIn (x,y,bt_PLAY) then
     if button == 1 then
-      currentScene = sceneList.Game
-      music: play()
+      currentScene = sceneList.Menulevel
     end
   end
   
