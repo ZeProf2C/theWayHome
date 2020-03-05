@@ -19,15 +19,18 @@ charSpeed = 100
 dtSum = 0 
 UpdtTime = 1 
 
+function Game.load()
+    currentlevel.load()
+end
+
+
 
 
 function Game.update(dt)
     dtSum = dtSum + dt
     Map.update()
     Perso.update()
-    obs.update(Map)
-    uli.update(Map)
-    nenenene.update(Map)
+    currentlevel.update()
 
     if dtSum > UpdtTime then
         char.update(Map)
@@ -46,7 +49,7 @@ function Game.draw()
     Perso.draw()
 
     currentlevel.draw()
-    Map.draw(true)
+    Map.draw(false)
 
 end
 

@@ -53,9 +53,11 @@ function Perso.move(dir)
 end
 
 function Perso.keypressed(key)
-  uli.move(key, Map)
-  nenenene.move(key, Map)
-  obs.move(key, Map)
+  A.move(key, Map)
+  B.move(key, Map)
+  C.move(key, Map)
+  D.move(key, Map)
+  E.move(key, Map)
   if key == controls.right and Perso.XMap < caseCountWidth then
     Perso.move("right")
   end
