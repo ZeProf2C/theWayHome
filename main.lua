@@ -43,9 +43,6 @@ sceneList.settings = require("menu")
 currentScene = sceneList.Intro
 
 
-
-
-
 function love.load()
   backgroundImage = love.graphics.newImage("ressources/Images/Grotte.jpg")
 
@@ -55,7 +52,6 @@ function love.load()
   music: setLooping(true)
   music: setVolume(1)
   
-  Game.load()
 end
 
 function love.update(dt)
@@ -65,7 +61,6 @@ end
 
 function love.draw()
  currentScene.draw()
-
 end
 
 function love.keypressed(key)

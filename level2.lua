@@ -1,12 +1,13 @@
 level2 = {}
 
-function level2.load()
-    A = obstacle.new(5, 5, 1, 3, "ressources/images/bloc.png", "A")
-    B = obstacle.new(3, 4, 5, 1, "ressources/images/bloc.png", "B")
-    C = obstacle.new(1, 1, 3, 3, "ressources/images/bloc.png", "C")
-    D = obstacle.new(9, 1, 3, 3, "ressources/images/bloc.png", "D")
-    E = obstacle.new(1, 8, 3, 1, "ressources/images/bloc.png", "E")
+level2.name = "niv2"
 
+function level2.refresh()
+    A.change (4, 4, 3, 3)
+    B.change (4, 3, 3, 1)
+    C.change (8, 3, 3, 3)
+    D.change (6, 6, 3, 1)
+    E.change (9, 4, 3, 3)
 end
 
 function level2.update() 

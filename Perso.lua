@@ -58,6 +58,11 @@ function Perso.keypressed(key)
   C.move(key, Map)
   D.move(key, Map)
   E.move(key, Map)
+  F.move(key, Map)
+  G.move(key, Map)
+  H.move(key, Map)
+  I.move(key, Map)
+  J.move(key, Map)
   if key == controls.right and Perso.XMap < caseCountWidth then
     Perso.move("right")
   end

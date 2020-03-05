@@ -122,11 +122,20 @@ obstacle.new = function(Xmap, Ymap, lenght, dir, image, name)
                         end
                     end
                 end
-            end
-            
+            end           
+        end
+        Obstacle.change = function (Xmap, Ymap, lenght, dir)
+            Obstacle.Xmap = Xmap 
+            Obstacle.Ymap = Ymap          
+            Obstacle.XmapEnd, Obstacle.YmapEnd = Xmap, Ymap 
+            Obstacle.XEnd, Obstacle.YEnd = Obstacle.X, Obstacle.Y
+            Obstacle.lenght = lenght or 1 
+            Obstacle.dir = dir or 1
         end
     return Obstacle
 end
+
+
 
 obstacle.move = function()
 end

@@ -19,9 +19,7 @@ charSpeed = 100
 dtSum = 0 
 UpdtTime = 1 
 
-function Game.load()
-    currentlevel.load()
-end
+
 
 
 
@@ -51,6 +49,7 @@ function Game.draw()
     currentlevel.draw()
     Map.draw(false)
 
+    
 end
 
 function Game.keypressed(key)
