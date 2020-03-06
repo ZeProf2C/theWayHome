@@ -22,6 +22,7 @@ chariot.new = function(Xmap, Ymap, image, railImage)
         Chariot.Xmap = Chariot.Xmap + Chariot.speed
       elseif map[Chariot.Xmap+2][Chariot.Ymap].busy == false and Chariot.Xmap+Chariot.speed+1 == caseCountWidth then
         music: stop()
+        
         currentScene = sceneList.victory
       end
       

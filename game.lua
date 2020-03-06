@@ -26,6 +26,7 @@ UpdtTime = 1
 
 function Game.update(dt)
     dtSum = dtSum + dt
+    
     Map.update()
     Perso.update()
     currentlevel.update()
@@ -47,7 +48,7 @@ function Game.draw()
     Perso.draw()
 
     currentlevel.draw()
-    Map.draw(false)
+    Map.draw(true)
 
     
 end

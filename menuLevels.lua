@@ -93,14 +93,14 @@ end
 function menuLevels.mousereleased(x, y, button)
   if menuLevels.IsIn (x,y,bt_lv1) and button == 1 then
     currentlevel = levelList.lv1
+    currentlevel.reset()
     currentScene = sceneList.Game
-    
     music: play()
   end
 
   if menuLevels.IsIn (x,y,bt_lv2) and button == 1 then
     currentlevel = levelList.lv2
-    level2.refresh()
+    currentlevel.reset()
     currentScene = sceneList.Game
     music: play()
   end

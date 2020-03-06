@@ -20,6 +20,14 @@ for i = 1, caseCountWidth do
   end
 end
 
+function Map.reset() 
+  for i = 1 ,caseCountWidth do
+    for j = 1 , caseCountHeight do
+      Map[i][j].state = "vide"
+    end
+  end
+end 
+
 function Map.update()
   for i = 1 ,caseCountWidth do
     for j = 1 , caseCountHeight do
