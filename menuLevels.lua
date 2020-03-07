@@ -41,6 +41,18 @@ bt_lv3 = {}
     bt_lv3.image.height = bt_lv3.image.src:getHeight()
     bt_lv3.image.scaleX = bt_lv3.image.width/bt_lv3.long
     bt_lv3.image.scaleY = bt_lv3.image.height/bt_lv3.haut
+  
+bt_lv4 = {}
+  bt_lv4.x         = WIDTH*2/10
+  bt_lv4.y         = HEIGHT*8/10
+  bt_lv4.long      = 400
+  bt_lv4.haut      = 100
+  bt_lv4.image     = {}
+    bt_lv4.image.src    = love.graphics.newImage("ressources/Images/rien.jpg")
+    bt_lv4.image.width  = bt_lv4.image.src:getWidth() 
+    bt_lv4.image.height = bt_lv4.image.src:getHeight()
+    bt_lv4.image.scaleX = bt_lv4.image.width/bt_lv4.long
+    bt_lv4.image.scaleY = bt_lv4.image.height/bt_lv4.haut
 
 
 bt_menu = {}
@@ -81,6 +93,11 @@ function menuLevels.update (delta)
 
         end
       end
+    if menuLevels.IsIn (love.mouse.getX(),love.mouse.getY(),bt_lv4) then
+        if love.mouse.isDown(1) then
+
+        end
+      end
     if menuLevels.IsIn (love.mouse.getX(),love.mouse.getY(),bt_menu) then
         if love.mouse.isDown(1) then
 
@@ -97,11 +114,13 @@ function menuLevels.draw()
     love.graphics.draw(bt_lv1.image.src,bt_lv1.x,bt_lv1.y,0,1/bt_lv1.image.scaleX,1/bt_lv1.image.scaleY,bt_lv1.image.width/2,bt_lv1.image.width/2)
     love.graphics.draw(bt_lv2.image.src,bt_lv2.x,bt_lv2.y,0,1/bt_lv2.image.scaleX,1/bt_lv2.image.scaleY,bt_lv2.image.width/2,bt_lv2.image.width/2)
     love.graphics.draw(bt_lv3.image.src,bt_lv3.x,bt_lv3.y,0,1/bt_lv3.image.scaleX,1/bt_lv3.image.scaleY,bt_lv3.image.width/2,bt_lv3.image.width/2)
+    love.graphics.draw(bt_lv4.image.src,bt_lv4.x,bt_lv4.y,0,1/bt_lv4.image.scaleX,1/bt_lv4.image.scaleY,bt_lv4.image.width/2,bt_lv4.image.width/2)
     love.graphics.draw(bt_menu.image.src,bt_menu.x,bt_menu.y,0,1/bt_menu.image.scaleX,1/bt_menu.image.scaleY,bt_menu.image.width/2,bt_menu.image.width/2)
     love .graphics.setColor(0,0,0)
     love.graphics.print("LEVEL 1",bt_lv1.x,bt_lv1.y)
     love.graphics.print("LEVEL 2",bt_lv2.x,bt_lv2.y)
     love.graphics.print("LEVEL 3",bt_lv3.x,bt_lv3.y)
+    love.graphics.print("LEVEL 4",bt_lv4.x,bt_lv4.y)
     love.graphics.print("back to menu",bt_menu.x,bt_menu.y)
 
 end
@@ -130,6 +149,13 @@ function menuLevels.mousereleased(x, y, button)
     currentScene = sceneList.Game
     music: play()
   end
+  if menuLevels.IsIn (x,y,bt_lv4) and button == 1 then
+    currentlevel = levelList.lv4
+    currentlevel.reset()
+    currentScene = sceneList.Game
+    music: play()
+  end
+
 
   if menuLevels.IsIn (x,y,bt_menu) then 
     currentScene = sceneList.Menu
