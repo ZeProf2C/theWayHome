@@ -9,11 +9,11 @@ require("Chariot")
 levelList = {}
 levelList.lv1 = require ("level1")
 levelList.lv2 = require ("level2")
-
+levelList.lv3 = require ("level3")
 
 currentlevel = levelList.lv1
 
-char = chariot.new(5, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
+char = chariot.new(6, 1, "ressources/images/chariot.png", "ressources/Images/rail.png")
 charSpeed = 100
 
 dtSum = 0 
@@ -40,7 +40,7 @@ end
 
 function Game.draw()
     love.graphics.setColor(1,1,1)
-    love.graphics.draw(backgroundImage,0,0,0,0.4,0.4)
+    love.graphics.draw(backgroundImage,0,0,0,0.5,0.5)
     love.graphics.setFont(mainFont) 
 
     char.draw()
@@ -48,7 +48,7 @@ function Game.draw()
     Perso.draw()
 
     currentlevel.draw()
-    Map.draw(true)
+    Map.draw(false)
 
     
 end

@@ -1,6 +1,6 @@
 Perso = {}
 Perso.XMap  = 1
-Perso.YMap  = 4
+Perso.YMap  = 5
 Perso.radius = 30
 Perso.nom   = "Pascal"
 Perso.dir = 0 --Orientation du perso en Degre
@@ -77,6 +77,9 @@ function Perso.keypressed(key)
   
   if  key == controls.down and Perso.YMap < caseCountHeight then
     Perso.move("down")
+  end
+  if key == 'r' then
+    currentlevel.reset()
   end
 
   if key==controls.quit then

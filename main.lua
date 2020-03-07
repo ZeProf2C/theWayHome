@@ -22,8 +22,8 @@ io.stdout:setvbuf('no')
 mainFont = love.graphics.newFont(14)
 WIDTH, HEIGHT = love.window.getDesktopDimensions(1)
 
-caseCountWidth  = 10
-caseCountHeight = 9
+caseCountWidth  = 11
+caseCountHeight = 11
 casePxSide      = 80
 
 while caseCountWidth*casePxSide >= WIDTH and caseCountHeight*casePxSide >= HEIGHT do

@@ -15,13 +15,13 @@ J = obstacle.new(0, 0, 0, 1, "ressources/images/bloc.png", "J")
    
 function level1.reset()
     Perso.XMap = 1
-    Perso.YMap = 4
-    A.change (7, 3, 4, 3)
-    B.change (6, 2, 3, 1)
-    C.change (6, 7, 2, 1)
+    Perso.YMap = 5
+    A.change (7, 4, 4, 3)
+    B.change (6, 3, 3, 1)
+    C.change (6, 8, 2, 1)
    
     char.Xmap = 1
-    char.Ymap = 5
+    char.Ymap = 6
     Map.reset()
 end
 
