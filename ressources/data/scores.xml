@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <scores>
-    <1>
-        <player>Norman</player>
-        <score>132</score>
-    </1>
-    <2>
-        <player>Pierre-Angelo</player>
-        <score>0</score>
-    </2>
+  <game>
+    <date>01/01/1970 00:00:00</date>
+    <score>00</score>
+  </game>
+  <game>
+    <date>01/01/1970 00:00:00</date>
+    <score>00</score>
+  </game>
+  <game>
+    <date>05/20/20 11:04:41</date>
+    <score>46545</score>
+  </game>
 </scores>
