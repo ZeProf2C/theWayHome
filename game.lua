@@ -7,10 +7,10 @@ require("Obstacle")
 require("Chariot")
 
 levelList = {}
-levelList.lv1 = require ("level1")
-levelList.lv2 = require ("level2")
-levelList.lv3 = require ("level3")
-levelList.lv4 = require ("level4")
+levelList.lv1 = require ("levels/level1")
+levelList.lv2 = require ("levels/level2")
+levelList.lv3 = require ("levels/level3")
+levelList.lv4 = require ("levels/level4")
 
 
 currentlevel = levelList.lv1
