@@ -77,7 +77,13 @@ menuLevels.IsIn=function (mouseX,mouseY,button)
   end
 end
 
+local u = true --Sert a faire un "load" dans le update
+
 function menuLevels.update (delta)
+    if u then
+      timer.reset()
+      u = false
+    end
     if menuLevels.IsIn (love.mouse.getX(),love.mouse.getY(),bt_lv1) then
         if love.mouse.isDown(1) then
 
@@ -135,6 +141,7 @@ function menuLevels.mousereleased(x, y, button)
     currentlevel.reset()
     currentScene = sceneList.Game
     music: play()
+    timer.start()
   end
 
   if menuLevels.IsIn (x,y,bt_lv2) and button == 1 then
@@ -142,18 +149,21 @@ function menuLevels.mousereleased(x, y, button)
     currentlevel.reset()
     currentScene = sceneList.Game
     music: play()
+    timer.start()
   end
   if menuLevels.IsIn (x,y,bt_lv3) and button == 1 then
     currentlevel = levelList.lv3
     currentlevel.reset()
     currentScene = sceneList.Game
     music: play()
+    timer.start()
   end
   if menuLevels.IsIn (x,y,bt_lv4) and button == 1 then
     currentlevel = levelList.lv4
     currentlevel.reset()
     currentScene = sceneList.Game
     music: play()
+    timer.start()
   end
 
 

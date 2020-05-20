@@ -78,7 +78,7 @@ function Perso.keypressed(key)
   if  key == controls.down and Perso.YMap < caseCountHeight then
     Perso.move("down")
   end
-  if key == 'r' then
+  if key == controls.reset then
     currentlevel.reset()
   end
 

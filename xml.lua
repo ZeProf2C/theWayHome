@@ -23,3 +23,4 @@ function addScore(value)
     io.close(scoresFile)
 end
 
+

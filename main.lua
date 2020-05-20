@@ -32,6 +32,7 @@ end
 WIDTH, HEIGHT = caseCountWidth*casePxSide, caseCountHeight*casePxSide
 love.window.setMode(WIDTH,HEIGHT)
 
+require("timer")
 sceneList = {}
 sceneList.Intro    = require("titlescreen")
 sceneList.Menu     = require("menu")

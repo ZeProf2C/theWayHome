@@ -1,4 +1,5 @@
 victorySceen = {}
+
 victorySceen.image = {}
     victorySceen.image.src = love.graphics.newImage("ressources/Images/rien.jpg")
     victorySceen.image.width  = victorySceen.image.src:getWidth()
@@ -25,7 +26,13 @@ victorySceen.IsIn=function (mouseX,mouseY,button)
   end
 end
 
+local u = true --Sert a faire un "load" dans le update
+
 function victorySceen.update (delta)
+    if u then
+      addScore(timer.stop())
+      u = false
+    end
     if Menu.IsIn (love.mouse.getX(),love.mouse.getY(),bt_menu) then
         if love.mouse.isDown(1) then
 

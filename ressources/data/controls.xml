@@ -5,4 +5,5 @@
     <right>right</right>
     <left>left</left>
     <quit>escape</quit>
+    <reset>r</reset>
 </controls>
